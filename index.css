@@ -1,0 +1,365 @@
+
+
+body {
+    margin: 0;
+    font-family:  poppins, sans-serif;
+    background-color: #dbdbdb;
+}
+
+
+
+/* Style the switch container */
+.theme-switch {
+    display: inline-block;
+    position: relative;
+    width: 50px;
+    height: 25px;
+    align-self: center;
+}
+
+/* Hide the checkbox */
+.theme-switch input {
+    opacity: 0;
+    width: 0;
+    height: 0;
+}
+
+/* The slider (the switch itself) */
+.switch {
+    position: absolute;
+    cursor: pointer;
+    background-color: #ccc;
+    border-radius: 25px;
+    width: 100%;
+    height: 100%;
+    transition: background-color 0.3s ease-in-out;
+}
+
+/* The round toggle inside the switch */
+.switch::before {
+    content: '';
+    position: absolute;
+    height: 20px;
+    width: 20px;
+    background-color: white;
+    border-radius: 50%;
+    top: 50%;
+    left: 5%;
+    transform: translate(0, -50%);
+    transition: all 0.3s ease-in-out;
+}
+
+/* Change background and toggle position when checked */
+input:checked + .switch {
+    background-color: antiquewhite;
+}
+
+input:checked + .switch::before {
+    transform: translate(25px, -50%);
+}
+
+
+
+
+.navbar{
+    position: fixed;
+    width: 100%;
+    height: 65px;
+    display: grid;
+    grid-template-columns: 2fr 3fr 1fr;
+    background-color: lightgray;
+    border-radius: 8px;
+    border: 3px solid gray;
+}
+
+.darknavbar {
+    background-color: lightgray;
+    border: 3px solid dimgray;
+}
+
+.navbar img {
+    width: 60px;
+    height: 60px;
+}
+
+.navbar a {
+    width:100%;
+    height: 100%;
+}
+
+
+
+
+.navbar div {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+    justify-items: center;
+}
+
+
+
+.navbar button {
+    background-color: lightgray;
+    font-size: 1.4em;
+    border-color: grey;
+    border-radius: 5px;
+    height: 2em;
+    align-self: center;
+    justify-content: center;
+    width: 75%;
+    transition: background-color 0.3s ease , letter-spacing 0.3s ease , scale 0.3s ease , text-shadow 0.3s ease ;
+    cursor: pointer;
+}
+
+.navbar button:hover {
+    background-color: gray;
+    letter-spacing: 2px;
+    transform-style: preserve-3d;
+    scale: 1.1;
+    text-shadow: 5px 5px 10px black;
+}
+
+
+
+
+.darkheader {
+    background-image: url(icons/blackbackground.png);
+    background-size: cover; /* Makes the image cover the entire div */
+    background-position: center; /* Centers the image */
+    background-repeat: no-repeat;
+    height: fit-content;
+}
+
+
+
+
+
+.title {
+    margin-top: 0;
+    padding-top: 100px ;
+    padding-left: 30px;
+    font-size: 3em;
+    letter-spacing: 0.2em;
+}
+
+
+.darktitle {
+    color: white;
+}
+
+
+.title span {
+    color: gray;
+    font-size: 2em;
+}
+
+
+.header .welcome {
+    font-size: 3em;
+    color: darkgoldenrod;
+    text-align: center;
+    margin: 0;
+    padding: 0;
+}
+
+.desc {
+    margin: 2em 10em 0 10em;
+    padding-bottom: 5em;
+    text-align: center;
+    color: white;
+    font-size: 1.5em;
+    letter-spacing: 2px;
+    line-height: 2em;
+    margin-inside: 40px;
+}
+
+
+.darkdesc {
+    color: white;
+}
+
+
+
+.cps {
+    margin-top: 0;
+}
+
+.darkcps {
+    background-color: black;
+}
+
+
+.cps h2 {
+    margin-top: 0;
+    text-align: center;
+    font-size: 2em;
+    letter-spacing: 2px;
+}
+
+
+.darkcps h2 {
+    color: white;
+}
+
+.sems {
+    display: flex;
+    justify-content: space-evenly;
+    align-items: self-start;
+    padding-bottom: 2em;
+}
+
+.sem {
+    border-radius: 15px;
+    width: 35%;
+}
+
+.darksem {
+    background-color: lightgray;
+}
+
+.semester{
+    margin-top: 0;
+    padding-top: 30px ;
+    padding-left: 30px;
+    color: black;
+    font-size: 3em;
+    letter-spacing: 0.2em;
+}
+
+.course-line {
+    padding-left: 1em;
+    display: flex;
+    align-items: center;
+    width: 100%;
+    cursor: pointer;
+    transform: translateX(2px);
+    transition: transform 0.3s ease;
+}
+
+.course-line:hover {
+    transform: translateX(20px);
+}
+
+
+
+
+.footer {
+    border-radius: 15px;
+    height: 30em;
+    width: 100%;
+}
+
+
+.darkfooter {
+    background-image: url(icons/footer.png);
+    background-size: cover; /* Makes the image cover the entire div */
+    background-position: center; /* Centers the image */
+    background-repeat: no-repeat;
+}
+
+
+.hidden {
+    display: none;
+}
+
+
+.course-content {
+    padding-left: 5em;
+    max-height: 0; /* Start with hidden content */
+    overflow: hidden; /* Prevent content from spilling out */
+    visibility: hidden; /* Make it invisible */
+    transition: max-height 0.5s ease; /* Smooth transition */
+}
+
+.course-content.visible {
+    max-height: 500px; /* Set a large enough max-height for your content */
+    opacity: 1; /* Fully visible */
+    visibility: visible; /* Ensure it's visible */
+    transition: max-height 0.5s ease;
+}
+
+
+.close-icon , .open-icon{
+    height: 1.2em;
+    width: 1.2em;
+    float: right;
+    cursor: pointer;
+}
+
+
+.cp1, .cp2, .cs1, .cs2 {
+    cursor: pointer;
+    position: relative;
+}
+
+.cp1::after, .cp2::after, .cs1::after, .cs2::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: -2px;
+    width: 0;
+    height: 2px;
+    background-color: black;
+    transition: width 0.2s ease;
+}
+
+.cp1:hover::after, .cp2:hover::after, .cs1:hover::after, .cs2:hover::after {
+    width: 100%; /* Grows the underline */
+}
+
+
+
+
+.lightnavbar{
+    background-color: grey;
+    border: 3px solid dimgray;
+}
+
+
+
+
+
+.lightheader {
+    background-image: url(icons/lightheader.png);
+    background-size: cover; /* Makes the image cover the entire div */
+    background-position: center; /* Centers the image */
+    background-repeat: no-repeat;
+    height: fit-content;
+}
+
+.lighttitle {
+    color: black;
+}
+
+
+.lightdesc {
+    color:black;
+}
+
+
+.lightcps {
+    background-color: #dbdbdb;
+}
+
+
+.lightcps h2 {
+    color:black;
+}
+
+
+.lightsem {
+    background-color: dimgray;
+}
+
+
+.lightfooter {
+    background-image: url(icons/lightfooter.png);
+    background-size: cover; /* Makes the image cover the entire div */
+    background-position: center; /* Centers the image */
+    background-repeat: no-repeat;
+}
+
+
+.navbar, .header, .title, .desc, .cps, .sem, .footer {
+    transition: all 0.3s ease-in-out;
+}
